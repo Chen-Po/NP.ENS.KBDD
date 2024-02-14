@@ -885,44 +885,16 @@ end_time = time.time()
 run_time = end_time - start_time
 print("Computational time：", run_time/60, "mins")
 
-
-# In[13]:
-
-
-plt.figure(figsize=(5, 4), dpi=350)
-
-network_output = nx.from_numpy_matrix(sorted_sturcture_output[0])
-node_names = sorted_permute_gene[0][0]
-mapping = {i: node_names[i] for i in range(len(node_names))}
-network_output = nx.relabel_nodes(network_output, mapping)
-
-node_colors = ['cyan' if i in [0, 1] else 'white' for i in range(len(node_names))]
-
-pos = nx.spring_layout(network_output, k=50, iterations=600, seed=100)
-nx.draw(network_output, pos, with_labels=True, node_color=node_colors, node_size=350, width=1,
-        edge_color='black', cmap=plt.cm.Blues, edgecolors="black", font_size=4)
-
-plt.show()
-
-print("Network score: {}\n".format(sorted_score_output[0]))
-print("Network nodes:\n {}\n".format(sorted_gene_label_output[0]))
-print("Degree_sequence:\n {}".format(np.sum(sorted_sturcture_output[0], axis = 0)))
-
-
 # In[14]:
-
 
 # 1st potential network
 plt.figure(figsize=(5, 4), dpi=350)
 
 network_output = nx.from_numpy_matrix(sorted_sturcture_output[0])
-node_names = sorted_permute_gene[0][len(sorted_permute_gene[0])-1]
+node_names = sorted_permute_gene[0][len(sorted_permute_gene[0])-1]  # the final gene label for the 1st potential network
 mapping = {i: node_names[i] for i in range(len(node_names))}
 network_output = nx.relabel_nodes(network_output, mapping)
 
-node_colors = ['cyan' if i in [0, 1] else 'white' for i in range(len(node_names))]
-
-# 繪製圖形
 node_colors = ['cyan' if i in [0, 1] else 'white' for i in range(len(node_names))]
 
 pos = nx.spring_layout(network_output, k=50, iterations=600, seed=100)

@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
+# In[8]:
 
 
 import numpy as np
@@ -448,7 +448,7 @@ total_networks = 100
 sample_network = []
 reference_sparsity = []
 for i in range(0, total_networks):
-    netname = "/Users/liaochenpo/Desktop/Desktop/Meeting/Network construction/huge_data/Control_pcor/Normal0.1/true_network" + str(i) + ".csv"
+    netname = "true_network" + str(i) + ".csv"
     hugenet = pd.read_csv(netname, header = None)
     sample_network.append(hugenet.values)
     reference_sparsity.append(np.count_nonzero(hugenet) / ((hugenet.size ** 0.5) * ((hugenet.size ** 0.5) - 1)))
@@ -544,7 +544,7 @@ for kk in tqdm(range(total_networks)):
     ######################################
     # Labeling by permutation and Calculating network score
     ######################################    
-    dataname = "/Users/liaochenpo/Desktop/Desktop/Meeting/Network construction/huge_data/Control_pcor/Normal0.1/label_gene_exp" + str(kk) + ".csv"
+    dataname = "label_gene_exp" + str(kk) + ".csv"
     label_gene_exp = pd.read_csv(dataname, header = None)
     
     label_cor_from_gene_exp = np.abs(label_gene_exp.pcorr().to_numpy())

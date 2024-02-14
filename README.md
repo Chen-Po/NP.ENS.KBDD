@@ -1,6 +1,6 @@
 # KBDD: a knowledge-based and data-driven method for genetic network construction
 
-Updated: January 03 2024
+Updated: February 14 2024
 
 This repository contains code to reproduce the results of simulation and applications in
 

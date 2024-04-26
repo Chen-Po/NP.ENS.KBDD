@@ -98,15 +98,15 @@ def KGML_to_Matrix(pathway_name, KGML_file_path = "", save_path = ""):
 
         relation_new = []
         for ii in range(len(data_relation.index)):
-            if [i in data_relation.iloc[ii,][0] for i in separate_from].count(True) > 0:
-                relation1 = [separate_to[i] for i, v in enumerate([i in data_relation.iloc[ii,][0] for i in separate_from]) if v == True]
+            if [i in data_relation.iloc[ii,].iloc[0] for i in separate_from].count(True) > 0:
+                relation1 = [separate_to[i] for i, v in enumerate([i in data_relation.iloc[ii,].iloc[0] for i in separate_from]) if v == True]
             else:
-                relation1 = [data_relation.iloc[ii,][0]]
-            if [i in data_relation.iloc[ii,][1] for i in separate_from].count(True) > 0:
-                relation2 = [separate_to[i] for i, v in enumerate([i in data_relation.iloc[ii,][1] for i in separate_from]) if v == True]
+                relation1 = [data_relation.iloc[ii,].iloc[0]]
+            if [i in data_relation.iloc[ii, 1] for i in separate_from].count(True) > 0:
+                relation2 = [separate_to[i] for i, v in enumerate([i in data_relation.iloc[ii, 1] for i in separate_from]) if v == True]
 
             else:
-                relation2 = [data_relation.iloc[ii,][1]]
+                relation2 = [data_relation.iloc[ii,].iloc[1]]
             relation_new.append([(x, y) for x in relation1 for y in relation2])
         relation_new = pd.concat(list(map(pd.DataFrame, relation_new)))
         relation_new.columns = ["Var1", "Var2"]
@@ -147,7 +147,7 @@ def KGML_to_Matrix(pathway_name, KGML_file_path = "", save_path = ""):
             relationship = relationship.drop(pos1_relationship, axis = 0)
 
             data_entry.index = list(data_entry["id"])
-            entry_pos1 = [data_entry["id"][ii] for ii in pos1]
+            entry_pos1 = [data_entry["id"].iloc[ii] for ii in pos1]
             node_detail = data_entry.drop(entry_pos1, axis = 0)
             node_detail = node_detail[["name", "type", "node_name"]]
 

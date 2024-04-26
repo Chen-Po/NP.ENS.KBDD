@@ -117,5 +117,19 @@ def Network_score_with_cor(Candidate_network, Structure_score, Confidence_mat, G
             final_gene_label.append(gene_label)
             final_net_score.append(net_score)
             Permute_size_list.append(tmp_Permute_size_list)
-            
-    return final_structure_list, final_gene_label, final_net_score
+    
+    # Sort by network score
+    sorted_index = np.argsort(final_net_score)
+    sorted_index = sorted_index[::-1]
+    sorted_structure_output = []
+    sorted_score_output = []
+    sorted_gene_label_output = []
+
+    for i in sorted_index:
+        sorted_structure_output.append(final_structure_list[i])
+        sorted_score_output.append(final_net_score[i])
+        sorted_gene_label_output.append(final_gene_label[i])
+
+    return sorted_structure_output, sorted_gene_label_output, sorted_score_output
+    
+

@@ -2,7 +2,7 @@
 
 
 ## Description
-NP.ENS.KBDD is a Python library designed to construct genetic networks. The NEKBDD algorithm can integrate knowledge-based (pathway analysis) and data-driven (statistical modeling) methods. It can summarize the network structure using available biological information, explore network properties, and generate a final ensemble network. It is a flexible approach that can assign various degree distributions for different scientific questions and construct networks without assuming specific data distribution.
+NP.ENS.KBDD is a Python library designed to construct genetic networks. The NP.ENS.KBDD algorithm can integrate knowledge-based (pathway analysis) and data-driven (statistical modeling) methods. It can summarize the network structure using available biological information, explore network properties, and generate a final ensemble network. It is a flexible approach that can assign various degree distributions for different scientific questions and construct networks without assuming specific data distribution.
 
 ## Install from PyPi
 ```
@@ -27,4 +27,5 @@ pip install KBDD
 
 
 ## Reference
-Chen-Po Liao, Hung-Ching Chang, Chuhsing Kate Hsiao. "NEKBDD: a nonparametric ensemble knowledge-based data-driven genetic network construction" (2024)
+Chen-Po Liao, Hung-Ching Chang, Chuhsing Kate Hsiao. "A nonparametric ensemble knowledge-based and data-driven method for genetic network construction
+" (2024)
